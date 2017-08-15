@@ -5,7 +5,7 @@
 A python tiling utility for GBDX Vector Services. 
 
 Talavera can be used in a number of ways: as a lambda function, a cli, or 
-programmably in python. The goal is provide an way to predictably generate and view vector tiles 
+programmatically in python. The goal is provide an way to predictably generate and view vector tiles 
 from queries to Vector Services. 
 
 ## Installation
@@ -16,9 +16,9 @@ pip install talavera
 
 ## Usage
 
-### Lamda 
+### Lambda 
 
-As a lambda function Talavera can be used as fully functioning tilecache. It connects accepts a query param and z/x/y coords, 
+As a lambda function Talavera can be used as fully functioning tilecache. It accepts a query param and z/x/y coords, 
 fetches data and writes to an s3 repo.
 
 You can prepare a .zip file for uploading to Lambda via:
@@ -31,7 +31,7 @@ This will create a zip file with all the required deps and code needed to create
 
 ### Seed
 
-Cache seeding is primarily used for dev purposes. Its beneficial to selectively cache tiles for testing and viz purposes, and to not
+Cache seeding is primarily used for dev purposes. It's beneficial to selectively cache tiles for testing and viz purposes, and to not
 needlessly burden the production vector services servers...
 
 Here we show how we can seed tiles for a given AOI and zoom level range. This will seed the cache for all IDAHO footprints in the AOI:
@@ -46,7 +46,7 @@ seed(bbox, query, zooms=range(3,16), force=True)
 
 ### Visualization
 
-In order to quickly visualize tiles there's method in Talavera that renders a mapbox-gl map of cached tiles:
+In order to quickly visualize tiles there's a method in Talavera that renders a mapbox-gl map of cached tiles:
 
 ```
 tilemap('ingest_source:OSM AND item_type:Building', zoom=14, lon=-104.993720, lat=39.748048)
